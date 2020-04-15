@@ -6,7 +6,8 @@ pupil <-> focal simulation
 
 ## variables
 - pupa (pupil array): complex amplitude array at a pupil. [numpy.complex]
-- foca (facal plane array): complex amplitude at a focal plane. [numpy.complex]
+- foca (focal plane array): complex amplitude at a focal plane. [numpy.complex]
+- pupil mask (pupil mask): mask for pupa [boolen]
 
 ## functions (currently we consider a pupil and a focal plane only)
 
