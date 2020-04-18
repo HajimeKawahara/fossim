@@ -15,7 +15,7 @@ def plotpup(pupa,filename="pupil_lat.png",small=False):
     plt.savefig(filename)
     plt.show()
 
-def plotfoc1D(foca,foca_perfect,exprat,filename="foc1D.png"):
+def plotfoc1D(foca,foca_perfect,exprat,filename="foc1D.png",ymin=10**-5):
     nx,ny=np.shape(foca)
     ifocal=np.abs(foca)**2
     ifocal_perfect=np.abs(foca_perfect)**2
@@ -28,7 +28,7 @@ def plotfoc1D(foca,foca_perfect,exprat,filename="foc1D.png"):
     plt.yscale("log")
     Q=300
     plt.xlim(nx/2-Q*exprat,nx/2+Q*exprat)
-    plt.ylim(10**-5,3.0)
+    plt.ylim(ymin,3.0)
     ax=fig.add_subplot(122)
     plt.plot(ifocal[int(nx/2),:]/np.max(ifocal),label="Multi pupil")
     plt.plot(ifocal_perfect[int(nx/2),:]/np.max(ifocal_perfect),label="Perfect Circular")
@@ -36,7 +36,7 @@ def plotfoc1D(foca,foca_perfect,exprat,filename="foc1D.png"):
     plt.yscale("log")
     Q=10
     plt.xlim(nx/2-Q*exprat,nx/2+Q*exprat)
-    plt.ylim(10**-5,3.0)    
+    plt.ylim(ymin,3.0)    
     plt.savefig(filename)
     plt.show()
     
